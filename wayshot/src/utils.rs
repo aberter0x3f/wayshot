@@ -53,7 +53,7 @@ pub enum EncodingFormat {
     Qoi,
 }
 
-impl From<EncodingFormat> for image::ImageOutputFormat {
+impl From<EncodingFormat> for image::ImageFormat {
     fn from(format: EncodingFormat) -> Self {
         match format {
             EncodingFormat::Jpg => image::ImageFormat::Jpeg.into(),

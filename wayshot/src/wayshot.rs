@@ -121,7 +121,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         let mut buffer = Cursor::new(Vec::new());
 
         let mut writer = BufWriter::new(stdout.lock());
-        image_buffer.write_to(&mut buffer, extension)?;
+        image_buffer.write_to(&mut buffer, extension.into())?;
 
         writer.write_all(buffer.get_ref())?;
     } else {
